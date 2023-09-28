@@ -3,3 +3,6 @@
 /hs_err_pid17340.log
 /hs_err_pid17680.log
 /.idea/
+/stock-openfeign/target/
+/stock-nacos/target/
+*/traget/
