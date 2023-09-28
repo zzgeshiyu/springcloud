@@ -1,0 +1,6 @@
+server:
+  port: 8012
+nobody:
+  json:
+    prefix-name: "33"
+    suffix-name: "44"

@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    active: dev
+
+#在配置中心可以通过  profile进行设置
+#只有默认的配置文件 和服务名相同的配置文件 就是 默认配置文件
+#对应的 dataId: ${spring.application.name}-${profile}.${file-extension:properties}
