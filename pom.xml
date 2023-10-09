@@ -13,6 +13,7 @@
         <module>data-structure</module>
         <module>product-fegin</module>
         <module>config-nacos</module>
+        <module>sentinel_demo</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

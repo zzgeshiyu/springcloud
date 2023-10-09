@@ -1,0 +1,28 @@
+spring:
+  application:
+    #会自动根据服务名拉取dataId对应的配置文件；
+    #如果dataId和服务名不一致， 就需要手动指定 dataId
+    name: demo-service
+  cloud:
+    nacos:
+      server-addr: 192.168.204.1:8848
+      username: nacos
+      password: nacos
+      config:
+#        #解决控制台打印 clientWork日志，需要注释 namespace :public 的命名空间，或者修改为 其他命名空间
+        namespace: dc213631-2a4a-4ad6-b9bd-294bb0043963
+        #nacos 客户段默认是 properties 配置格式；
+        #一旦修改为 非properties 格式，需要通过下面配置设置
+        #只针对 默认配置文件
+        file-extension: yaml
+        group: DEFAULT_GROUP
+        shared-configs:
+          - dataId: demo-config.yaml
+            refresh: true
+            #默认为 DEFAULT_GROUP
+            group: DEFAULT_GROUP
+
+#        refresh-enabled: false  关闭就会无法感知服务端配置的变更
+
+#配置文件优先级：(优先级约高会覆盖优先级小的，并会相互 互补)
+# profile> 配置文件 >extension-configs> shared-configs(最后一个dataId会覆盖前面一个)
