@@ -1,5 +1,6 @@
 package com.leran.product.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.leran.product.model.ProductModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +14,7 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
 
+    @SentinelResource(value = "product-getProduct")
     @GetMapping("/getProduct/{code}")
     public List<ProductModel> getProduct(@PathVariable(name = "code") String code){
         List<ProductModel> productModels = new ArrayList<>();

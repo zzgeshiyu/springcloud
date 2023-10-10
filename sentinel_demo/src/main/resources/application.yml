@@ -2,6 +2,11 @@
 spring:
   profiles:
     active: dev
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 192.168.10.129:8858
+
 
 #在配置中心可以通过  profile进行设置
 #只有默认的配置文件 和服务名相同的配置文件 就是 默认配置文件

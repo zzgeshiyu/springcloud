@@ -11,3 +11,7 @@ spring:
         username: nacos
         password: nacos
         namespace: public
+#sentinel 配置
+    sentinel:
+      transport:
+        dashboard: 192.168.10.129:8858

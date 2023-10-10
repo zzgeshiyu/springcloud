@@ -33,18 +33,6 @@ import java.util.List;
 @Slf4j
 public class DemoController {
 
-    @Autowired
-    private StockFeignService stockFeignService;
-
-    @Autowired(required = false)
-    private ProductFeignService productFeignService;
-
-    @GetMapping("/search")
-    public String search() {
-        stockFeignService.reduct();
-        return JSONObject.toJSONString(productFeignService.getProduct("test"));
-    }
-
     //进行sentinel流量控制
     @GetMapping("/get")
 //    @SentinelResource("get")

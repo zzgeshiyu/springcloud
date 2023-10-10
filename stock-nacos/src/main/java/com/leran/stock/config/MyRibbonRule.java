@@ -1,4 +1,4 @@
-package com.leran.demo.config;
+package com.leran.stock.config;
 
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RetryRule;
@@ -14,16 +14,16 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class MyRibbonRule {
 
-//    @Bean
-//    public IRule ribbonRule() {
-//        return new RetryRule();
-//    }
-//
-//    @Bean
-//    //添加负载均衡才能生效
-//    @LoadBalanced
-//    public RestTemplate restTemplate(RestTemplateBuilder builder) {
-//        RestTemplate restTemplate = builder.build();
-//        return restTemplate;
-//    }
+    @Bean
+    public IRule ribbonRule() {
+        return new RetryRule();
+    }
+
+    @Bean
+    //添加负载均衡才能生效
+    @LoadBalanced
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        RestTemplate restTemplate = builder.build();
+        return restTemplate;
+    }
 }

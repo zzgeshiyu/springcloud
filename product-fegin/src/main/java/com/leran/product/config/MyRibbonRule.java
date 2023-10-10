@@ -19,11 +19,11 @@ public class MyRibbonRule {
         return new RetryRule();
     }
 
-    @Bean
+    /*@Bean
     //添加负载均衡才能生效
     @LoadBalanced
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
         RestTemplate restTemplate = builder.build();
         return restTemplate;
-    }
+    }*/
 }
