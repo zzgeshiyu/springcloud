@@ -6,12 +6,16 @@ spring:
     name: stock-service
   cloud:
     nacos:
-      server-addr: 192.168.204.1:8848
-      discovery:
+      config:
+        file-extension: yml
+        server-addr: 192.168.204.1:8848
         username: nacos
         password: nacos
-        namespace: public
-#sentinel 配置
+    config:
+      import:
+        - optional:nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
+
+    #sentinel 配置
     sentinel:
       transport:
         dashboard: 192.168.10.129:8858
